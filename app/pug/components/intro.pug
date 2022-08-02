@@ -1,0 +1,50 @@
+-
+  var intro = {
+    header: 'Пиломатериалы в СПб и Ленинградской области напрямую от производителя',
+    subheader: 'Гарантия качества на всю продукцию – проверяем каждую партию',
+    items: [
+      {
+        image: 'img/sprite.svg#intro-01',
+        header: 'Действительно недорого',
+        text: 'Сами изготавливаем пиломатериалы, работаем без посредников, поэтому не завышаем цены '
+      },
+      {
+        image: 'img/sprite.svg#intro-02',
+        header: 'От 1 дня до недели',
+        text: 'Займет производство пиломатериалов – срок зависит от объема и сложности заказа '
+      },
+      {
+        image: 'img/sprite.svg#intro-03',
+        header: 'Есть из чего выбрать',
+        text: 'От простой сухой доски до блок-хауса и имитации бруса – закройте ваши строительные задачи'
+      },
+      {
+        image: 'img/sprite.svg#intro-04',
+        header: 'На долгие годы ',
+        text: 'Полный цикл подготовки пиломатериалов – вы получите качественные обработанные изделия'
+      },
+    ],
+    bottom: {
+      button: { href: '#callback', text: 'перезвоните мне' },
+      text: 'Менеджер рассчитает точную стоимость <br>и проконсультирует по всем вопросам '
+    }
+  }
+
+.intro#intro
+  .container
+    h1.intro__header !{intro.header}
+    p.intro__subheader !{intro.subheader}
+    .intro-items.flex
+      each item in intro.items
+        .intro__item
+          .intro__item-image-part
+            svg.intro__item-image
+              use(xlink:href=item.image)
+            //- img.intro__item-image(src=item.image, alt='')
+          .intro__item-text-part
+            p.intro__item-header !{item.header}
+            p.intro__item-text !{item.text}
+    .intro__bottom.flex.aic
+      a.intro__button.btn.btn_call(href=intro.bottom.button.href)
+        span !{intro.bottom.button.text}
+      p.intro__bottom-text !{intro.bottom.text}

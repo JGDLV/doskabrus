@@ -1,0 +1,27 @@
+-
+  var services = {
+    items: [
+      {
+        image: 'img/sprite.svg#services-01',
+        header: 'Сушка',
+        text: 'Вы можете купить пиломатериалы естественной влажности или просушенные на специальном оборудовании – гарантируем, что при использовании такой технологии геометрия не нарушается, а все изделия будут ровными. '
+      },
+      {
+        image: 'img/sprite.svg#services-02',
+        header: 'Строжка',
+        text: 'Получите партию продукции, которая сразу готова к использованию – по запросу прострогаем пиломатериалы на современных станках. Никаких шероховатостей, микротрещин, зазубрин и прочих дефектов. Тщательно проверяем качество обработки. '
+      },
+    ],
+  }
+  
+.services
+  .services-items.flex
+    each item in services.items
+      .services__item
+        .services__item-image-part
+          svg.services__item-image
+            use(xlink:href=item.image)
+          //- img.services__item-image(src=item.image, alt='')
+        .services__item-text-part
+          p.services__item-header !{item.header}
+          p.services__item-text !{item.text}

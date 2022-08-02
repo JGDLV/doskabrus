@@ -1,0 +1,61 @@
+-
+  var clearPhone = function(x) {
+    return x.replace(/\D/g, '');
+  }
+
+  var header = {
+    logo: 'img/logo.png',
+    email: 'upwood@yandex.ru',
+    whours: 'Время работы: <br>ПН-СБ с 09:00 до 18:00',
+    phones: [
+      '+7 (921) 900-05-70',
+      '+7 (965) 082-91-56',
+    ],
+    button: 'Заказать звонок',
+    menu: [
+      { href: '#catalog', text: 'Виды продукции и услуги' },
+      { href: '#price', text: 'Прайс-лист' },
+      { href: '#scheme', text: 'Условия работы' },
+      { href: '#about', text: 'О компании' },
+      { href: '#footer_top', text: 'Контакты' },
+    ]
+  }
+
+header.header
+  .header__top
+    .container
+      .header__top-inner.flex.aic
+        .logo
+          a.logo__link(href="")
+            img.logo__image(src=header.logo, alt="")
+        .header__email
+          a.header__email-link(href="mailto:" + header.email) !{header.email}
+        .header__whours !{header.whours}
+        //- .header__whours.mobile ПН-СБ с 09:00 до 18:00
+        .menu
+          ul.menu-items.flex
+            each item in header.menu
+              li.menu__item
+                a.menu__link.goto(href=item.href) !{item.text}
+        .header__phones
+          each phone in header.phones
+            a.header__phone(href="tel:+" + clearPhone(phone)) !{phone}
+        a.header__button.btn(href="#callback") Заказать звонок
+  .header__bottom
+    .menu-toggle
+      i.icon-toggle
+        span
+        span
+        span
+    .menu
+      .container
+        ul.menu-items.flex
+          each item in header.menu
+            li.menu__item
+              a.menu__link.goto(href=item.href) !{item.text}
+        .mobile
+          .tagline Производства и продажа пиломатериалов с доставкой по ЛО и СПб.
+          .header__whours <b>График работы:</b> ПН-СБ с 9.00 до 18.00, обед с 13.00 до 14.00
+          .header__email
+            a.header__email-link(href="mailto:" + header.email) !{header.email}
+    a.header__button.btn.mobile(href="#callback") Заказать звонок

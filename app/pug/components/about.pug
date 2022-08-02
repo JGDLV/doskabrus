@@ -1,0 +1,31 @@
+-
+  var about = {
+    header: 'Пиломатериалы от производителя «Онега»',
+    subheader: 'Ручаемся за качество продукции',
+    texts: [
+      'Работаем с 1998 года – за этот период изучили все тонкости и нюансы производства пиломатериалов. Тщательно подбираем древесину, чтобы предоставлять качественную продукцию клиентам.',
+      'В распоряжении современное оборудование: сушильные камеры, станки для строжки, пилорама, погрузочная техника. Пиломатериалы и заготовки храним на собственном складе с соблюдением всех норм.',
+    ],
+    items: [
+      'img/about-01.jpg',
+      'img/about-02.jpg',
+      'img/about-03.jpg',
+    ],
+  }
+
+.about#about
+  .container
+    h2.about__header !{about.header}
+    p.about__subheader.subheader !{about.subheader}
+  .about-items.owl-carousel
+    each item in about.items
+      a.about__item(href=item) 
+        img.about__item-image(src=item, alt='')
+  .container
+    .about__inner.flex
+      .about__left
+        each text in about.texts
+          p !{text}
+      .about__right
+        include benefits.pug
+      a.about__button.btn.btn_stroke(href="#") развернуть текст

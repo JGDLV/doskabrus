@@ -1,0 +1,16 @@
+extends _layout.pug
+
+block variables
+  -
+    var title = 'Пиломатериалы в СПб и Ленинградской области от производителя Онега'
+    var description = 'Производство пиломатериалов в СПб и ЛО. Предлагаем купить пиломатериалы в СПб и ЛО для строительных, ремонтных и прочих работ. Продажа сухих пиломатериалов и изделий естественной влажности. Доставка пиломатериалов от производителя Онега по ЛО и СПб.'
+    var index = true
+
+block content
+  include components/intro.pug
+  include components/catalog.pug
+  include components/price.pug
+  include components/cta.pug
+  include components/scheme.pug
+  include components/about.pug
+  include components/reviews.pug

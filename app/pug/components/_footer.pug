@@ -1,0 +1,48 @@
+footer.footer
+  .footer__top#footer_top
+    .container
+      .footer__top-inner.flex.jcsb
+        .map
+          //- img(src="img/map.jpg", alt="")
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abc044f6adf199d19cf6518d8b8b937ebf5d1e86e7ebed5c3cc393231cda551f4&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+        form.form
+          input(type="hidden", name="act" value="callback")
+          p.form__header Заказать обратный звонок
+          .form__inner
+            label.form__name.form__label
+              p.form__name-text Имя
+              input.form__name-input.form__input(type="text" name="name")
+            label.form__phone.form__label
+              p.form__phone-text Телефон *
+              input.form__phone-input.form__input(type="text" name="phone" required)
+            label.form__comment.form__label
+              p.form__comment-text Комментарий к заявке
+              textarea.form__comment-textarea.form__textarea(type="text" name="comment")
+          label.form__privacy.form__label
+            input(type="checkbox" required)
+            | Разрешаю обработку #[a(href="#privacy") персональных данных]
+          button.form__button.btn.btn_call(type="submit")
+            span заказать звонок
+      #top.top
+        svg.top__image
+          use(xlink:href='img/sprite.svg#top')
+        .top__text.mobile Наверх
+  .footer__middle
+    .container
+      .footer__middle-inner.flex
+        .footer__middle-left
+          a.footer__link(href="#privacy") Политика конфиденциальности<br>
+          //- a.footer__link(href="Реквизиты.pdf") Реквизиты
+        .footer__middle-right
+          .footer__address 188340, Ленинградская область, Гатчинский район, <br>пгт. Тайцы, ул. Карьерная, д. 1
+          .footer__whours ПН-СБ с 09:00 до 18:00
+          .footer__phones
+            each phone in header.phones
+              a.footer__phone(href="tel:+" + clearPhone(phone)) !{phone}<br>
+          .footer__email
+            a.footer__email-link(href="mailto:" + header.email) !{header.email}
+  .footer__bottom
+    .container
+      .footer__bottom-inner.flex.aic.jcsb
+        p © 2021 ООО «ОНЕГА»
+        p Разработано: #[a(href='https://1ps.ru/') 1PS.RU]

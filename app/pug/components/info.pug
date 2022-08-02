@@ -1,0 +1,21 @@
+-
+  var info = {
+    items: [
+      {
+        header: 'Оплата',
+        text: 'Наличными в нашем магазине, банковской картой или через расчетный счет – предоставим чек и необходимые документы.'
+      },
+      {
+        header: 'Доставка',
+        text: 'По СПб и Ленинградской области: отправим ваш заказ транспортными компаниями на выбор – рассчитаем стоимость при оформлении заказа.'
+      },
+    ],
+  }
+
+.info
+  .info-items.flex.jcsb
+    each item in info.items
+      .info__item
+        .info__item-image-part
+          p.info__item-header.flex.jcc.aic !{item.header}
+          p.info__item-text !{item.text}

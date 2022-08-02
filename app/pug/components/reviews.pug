@@ -1,0 +1,35 @@
+-
+  var reviews = {
+    header: 'Отзывы о пиломатериалах нашего производства',
+    subheader: 'Убедитесь в качестве и профессионализме ',
+    items: [
+      {
+        image: 'img/reviews-01.png',
+        name: 'Роман Аткельдинов',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.'
+      },
+      {
+        image: 'img/reviews-02.png',
+        name: 'Евгений Харитонов',
+        text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+      },
+      {
+        image: 'img/reviews-02.png',
+        name: 'Евгений Харитонов',
+        text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+      },
+    ],
+  }
+
+.reviews#reviews
+  .container
+    h2.reviews__header !{reviews.header}
+    p.reviews__subheader.subheader !{reviews.subheader}
+    .reviews-items.flex.jcsb.owl-carousel
+      each item in reviews.items
+        .reviews__item
+          .reviews__item-image-part
+            img.reviews__item-image(src=item.image, alt='')
+          .reviews__item-text-part
+            p.reviews__item-name !{item.name}
+            p.reviews__item-text !{item.text}

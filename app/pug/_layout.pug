@@ -1,0 +1,25 @@
+block variables
+  -
+    var title = 'title'
+    var description = 'description'
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    title= title
+    meta(name='description' content=description)
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap')
+    link(rel='stylesheet' href='css/libs.min.css')
+    link(rel='stylesheet' href='css/style.css')
+  body(class=index ? '' : 'inner')
+    include components/_header.pug
+    main.content
+      block content
+    include components/_footer.pug
+    include components/modals.pug
+    script(src='js/libs.min.js')
+    script(src='js/scripts.js')

@@ -1,0 +1,16 @@
+-
+  var price = {
+    header: 'Подробный прайс-лист',
+    subheader: 'Купите пиломатериалы без наценок и переплат',
+    text: '',
+    button: { href: '#', text: 'Показать прайс-лист полностью' }
+  }
+
+.price#price
+  .container
+    h2.price__header !{price.header}
+    p.price__subheader.subheader !{price.subheader}
+    .price-table-wrap
+      include table.pug
+    a.price__button.btn.btn_stroke.desktop(href=price.button.href) !{price.button.text}
+    a.price__button2.btn.btn_stroke.mobile(href=price.button.href) !{price.button.text}

@@ -1,0 +1,962 @@
+$basic: #0c0c0c
+$orange: #e36243
+
+body
+  font-family: 'Roboto', sans-serif
+  font-size: 15px
+  line-height: calc(22 / 15)
+  font-weight: 300
+  color: #333
+
+.container
+  max-width: 1200px
+  padding: 0 15px
+  margin: auto
+
+.btn
+  display: flex
+  text-align: center
+  justify-content: center
+  align-items: center
+  height: 59px
+  background-color: $orange
+  max-width: 100%
+  color: #ffffff
+  font-size: 16px
+  font-weight: 700
+  line-height: 20px
+  text-transform: uppercase
+  width: 200px
+  position: relative
+  transition: background .5s ease
+  &:hover
+    background-color: #cd5942
+  &_stroke
+    background: none !important
+    border: 3px solid $orange
+    color: $orange
+    &:hover
+      border-color: #707070
+      color: #707070
+  &_call
+    // padding-left: 40px
+    span
+      padding-left: 40px
+      position: relative
+      &::before
+        +p
+        background: url('../img/sprite.svg#call-center') no-repeat
+        background-size: 27px
+        width: 27px
+        height: 27px
+        top: -4px
+        left: 0
+  &_cta
+    // padding-left: 40px
+    span
+      padding-left: 40px
+      position: relative
+      &::before
+        +p
+        background: url('../img/sprite.svg#contract') no-repeat
+        background-size: 27px
+        width: 27px
+        height: 27px
+        top: -4px
+        left: 0
+
+.header
+  &__top
+    padding: 21px 0 19px
+    background: #fff
+    &-inner
+      position: relative
+    .menu
+      display: none
+  &__bottom
+    background-color: #333333
+  &__email
+    padding-left: 15px
+    position: relative
+    margin: -5px 57px 0 0
+    &::before
+      +p
+      width: 10px
+      height: 10px
+      background: url('../img/sprite.svg#email') no-repeat
+      top: 8px
+      left: 0
+    &-link
+      color: $basic
+      font-size: 13px
+      font-weight: 700
+      line-height: 15px
+      letter-spacing: 0.33px
+      font-weight: 700
+      border-bottom: 1px solid rgba($basic, .5)
+      &:hover
+        color: $orange
+        border-bottom-color: rgba($orange, .5)
+  &__whours
+    position: relative
+    padding-left: 18px
+    color: $basic
+    font-size: 13px
+    letter-spacing: 0.33px
+    line-height: 18px
+    &::before
+      +p
+      width: 10px
+      height: 10px
+      background: url('../img/sprite.svg#whours') no-repeat
+      top: 3px
+      left: 1px
+  &__phones
+    background-color: #929292
+    margin-left: auto
+    padding: 7px 25px
+  &__phone
+    color: #ffffff
+    font-size: 16px
+    font-weight: 700
+    line-height: 20px
+    letter-spacing: 0.4px
+    display: block
+    &:first-child
+      margin-bottom: 5px
+    &:hover
+      color: $basic
+  &.stickytop
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 10
+    +tr
+    .header__top
+      box-shadow: 0 0 44px 2px rgba(175, 175, 175, 0.2)
+      padding: 13px 0
+    .header__bottom, .header__email, .header__whours
+      display: none
+    .logo__image
+      width: 171px
+    .header__button
+      height: 39px
+      margin-left: auto
+    .header__phones
+      height: 39px
+      position: absolute
+      top: 0
+      right: 200px
+      padding: 10px 30px 10px 20px
+      &::after
+        +p
+        width: 20px
+        height: 20px
+        background: url('../img/sprite.svg#next') no-repeat center
+        background-size: 20px
+        top: 9px
+        right: 3px
+      &:hover
+        height: auto
+        .header__phone:last-child
+          display: block
+        &::after
+          transform: rotate(90deg)
+          +tr
+    .header__phone:last-child
+      display: none
+    .logo
+      margin-right: 29px
+    .menu
+      display: block
+      &__item
+        margin-right: 19px
+        &:last-child
+          margin-right: 0
+        &::after
+          content: none
+      &__link
+        color: #333333
+        font-size: 13px
+        letter-spacing: 0.33px
+        display: inline
+        line-height: 1
+        &::after
+          content: none
+
+.logo
+  margin-right: 84px
+  &__link
+    display: block
+    line-height: 0
+  &__image
+    width: 278px
+    // +tr
+
+.menu
+  &__item
+    flex-grow: 1
+    text-align: center
+    position: relative
+    &::after
+      +p
+      width: 4px
+      height: 4px
+      background-color: $orange
+      top: 23px
+      right: 0
+    &:last-child
+      &::after
+        content: none
+  &__link
+    color: #fff
+    letter-spacing: 0.38px
+    line-height: 50px
+    display: block
+    position: relative
+    &::after
+      +p
+      width: 100%
+      height: 2px
+      background: $orange
+      bottom: 0
+      opacity: 0
+    &:hover
+      &::after
+        opacity: 1
+
+.intro
+  background: #333 url('../img/intro-bg.jpg') top center no-repeat
+  background-size: cover
+  color: #fff
+  padding: 81px 0 118px
+  &__header
+    text-align: center
+    color: $orange
+    font-size: 48px
+    font-weight: 700
+    line-height: 55px
+    letter-spacing: 1.2px
+    margin-bottom: 14px
+  &__subheader
+    text-align: center
+    color: #ffffff
+    font-size: 22px
+    line-height: 30px
+    letter-spacing: 0.55px
+    margin-bottom: 50px
+  &-items
+    margin: 0 -15px 44px
+  &__item
+    width: 25%
+    padding: 0 15px 0 75px
+    color: #fefefe
+    position: relative
+    &-image
+      display: block
+      width: 37px
+      height: 37px
+      position: absolute
+      top: 2px
+      left: 15px
+      fill: $orange
+    &-header
+      font-size: 17px
+      font-weight: 700
+      line-height: 17px
+      margin-bottom: 10px
+  &__button
+    width: 270px
+    margin-right: 21px
+  &__bottom
+    &-text
+      opacity: 0.6
+      color: #ffffff
+      font-size: 13px
+      font-weight: 400
+      font-style: italic
+      line-height: 17px
+
+h2
+  font-size: 35px
+  font-weight: 300
+  line-height: 50px
+  letter-spacing: 0.88px
+
+.subheader
+  color: #929292
+  font-size: 20px
+  line-height: 30px
+  letter-spacing: 0.5px
+
+.catalog
+  padding: 79px 0 90px
+  &__header
+    margin-bottom: 5px
+  &__subheader
+    margin-bottom: 52px
+  &-items
+    margin-bottom: 60px
+  &__item
+    width: 25%
+    position: relative
+    span
+      display: block
+    &-image
+      width: 100%
+      height: 280px
+      object-fit: cover
+      &-part
+        line-height: 0
+        position: relative
+        &::before, &::after
+          +p
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          background: linear-gradient(to bottom, transparent 0%, rgba(#000, .5) 100%)
+          +tr
+        &::after
+          background: linear-gradient(to bottom, transparent 0%, rgba(#000, .6) 100%)
+          opacity: 0
+    &-text
+      position: absolute
+      left: 30px
+      bottom: 25px
+      color: #fff
+      font-size: 25px
+      line-height: 30px
+      letter-spacing: 0.63px
+      +tr
+    &:hover
+      .catalog__item-text
+        color: $orange
+      .catalog__item-image-part
+        &::after
+          opacity: 1
+        &::before
+          opacity: 0
+
+.services
+  &-items
+    align-items: normal
+  &__item
+    width: 50%
+    color: #fff
+    position: relative
+    padding: 38px 30px 35px 98px
+    &:first-child
+      background-color: #e36243
+    &:last-child
+      background-color: #cd5942
+    &-header
+      font-size: 20px
+      line-height: 1
+      margin-bottom: 13px
+    &-image
+      position: absolute
+      top: 30px
+      left: 30px
+      display: block
+      width: 37px
+      height: 37px
+      fill: #fff
+
+.price
+  padding: 79px 0 90px
+  background: url('../img/white_carbon.png')
+  &__header
+    margin-bottom: 5px
+  &__subheader
+    margin-bottom: 52px
+  &__item
+    font-size: 13px
+    line-height: 18px
+    border: 1px solid #707070
+    padding: 20px
+    margin-top: -1px
+    &:nth-child(3) ~ &
+      display: none
+  &-table
+    width: 100%
+    border-collapse: collapse
+    td
+      border: 1px solid #707070
+      padding: 12px 33px 11px
+      font-size: 17px
+      line-height: 30px
+      letter-spacing: 0.42px
+      vertical-align: top
+    tr
+      &:nth-child(10) ~ tr
+        display: none
+      &:first-child
+        td
+          background: #707070
+          text-align: center
+          color: #ffffff
+          font-size: 17px
+          font-weight: 700
+          line-height: 30px
+          letter-spacing: 0.42px
+          padding: 21px 0 20px
+      &:nth-child(2)
+        td
+          &:nth-child(1)
+            width: 370px
+          &:nth-child(2)
+            width: 275px
+          &:nth-child(3)
+            width: 175px
+          &:nth-child(4)
+            width: 175px
+          &:nth-child(5)
+            width: 175px
+    &-wrap
+      // height: 751px
+      // overflow: hidden
+      margin-bottom: 50px
+  &__button, &__button2
+    width: 370px
+    margin: auto
+  &__button2
+    display: none
+  &-items
+    display: none
+
+.cta
+  padding: 81px 0 82px
+  color: #ffffff
+  background: #333 url('../img/cta-bg.jpg') top center no-repeat
+  background-size: cover
+  &__header
+    font-size: 27px
+    line-height: 39px
+    letter-spacing: 0.68px
+    margin-bottom: 15px
+  &__text
+    opacity: 0.6
+    font-size: 20px
+    line-height: 30px
+    letter-spacing: 0.5px
+    &-part
+      max-width: 850px
+  &__button
+    width: 100%
+    margin: 10px 0 16px
+    &-part
+      max-width: calc(100% - 850px)
+      padding-left: 50px
+  &__bottom-text
+    opacity: 0.6
+    color: #fefefe
+    font-size: 13px
+    font-weight: 400
+    line-height: 17px
+    font-style: italic
+
+.scheme
+  padding: 79px 0 89px
+  &__header
+    margin-bottom: 5px
+  &__subheader
+    margin-bottom: 52px
+  &-items
+    margin-bottom: 30px
+    align-items: normal
+    counter-reset: schemeCounter
+  .owl-item
+    transform: none
+    .scheme__item
+      background: $orange
+    &:nth-child(even)
+      .scheme__item
+        background: #cd5942
+    .scheme__item
+      &::after
+        +p
+        width: 33px
+        height: 37px
+        background: url('../img/sprite.svg#next') no-repeat center
+        background-size: 20px
+        top: 102px
+        right: -16px
+        z-index: 10
+        opacity: .6
+    &:last-child
+      .scheme__item
+        &::after
+          content: none
+  .owl-nav
+    button
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 12px
+      height: 18px
+      opacity: 0.2
+      &::before
+        +p
+        background: url('../img/sprite.svg#next-dark') no-repeat center
+        width: 12px
+        height: 18px
+        background-size: 30px
+      &.owl-prev
+        left: 0
+        &::before
+          transform: translateY(-50%) rotate(180deg)
+      &.owl-next
+        right: 0
+
+  &__item
+    color: #fff
+    padding: 30px 30px 25px
+    position: relative
+    min-height: 239px
+    &::before
+      +p
+      counter-increment: schemeCounter
+      content: '0'counter(schemeCounter)
+      top: 32px
+      right: 29px
+      opacity: 0.6
+      color: #ffffff
+      font-size: 30px
+      line-height: 22px
+    // &::after
+    //   +p
+    //   width: 33px
+    //   height: 37px
+    //   background: url('../img/sprite.svg#next') no-repeat center
+    //   background-size: 20px
+    //   top: 102px
+    //   right: -16px
+    //   z-index: 10
+    //   opacity: .6
+    // &:last-child
+    //   &::after
+    //     content: none
+    &-image
+      width: 37px
+      height: 37px
+      fill: #fff
+      &-part
+        line-height: 0
+        margin-bottom: 15px
+    &-text-part
+      a
+        color: #fff
+        border-bottom: 1px solid rgba(#fff, .5)
+        &:hover
+          border-bottom-color: transparent
+
+.info
+  &-items
+  &__item
+    width: calc(50% - 5px)
+    &-header
+      background-color: #707070
+      color: #fff
+      color: #ffffff
+      font-size: 20px
+      line-height: 75px
+    &-text
+      background-color: #efeeef
+      padding: 25px 30px 26px
+
+.about
+  padding: 79px 0 91px
+  background-color: #f6f6f6
+  background-image: url('../img/white_carbon.png')
+  &__header
+    margin-bottom: 5px
+  &__subheader
+    margin-bottom: 30px
+  &-items
+    margin: 0 auto 8px
+    max-width: 1170px
+  &__item
+    width: calc(100% / 3)
+    padding: 0 5px
+    line-height: 0
+    &-image
+      width: 100%
+      height: 239px
+      object-fit: cover
+      background: #000
+      display: block
+  &__left
+    width: 50%
+    font-size: 17px
+    letter-spacing: 0.42px
+    line-height: 27px
+    padding: 26px 10px 0 0
+    p
+      margin-bottom: 6px
+      &:last-child
+        margin-bottom: 0
+  &__right
+    width: 50%
+  &__button
+    display: none
+  .owl-nav
+    display: flex
+    justify-content: center
+    margin-top: -5px
+    .owl-prev, .owl-next
+      width: 35px
+      height: 35px
+      background: #e36243 !important
+      position: relative
+      border-radius: 0
+      transition: background .5s ease
+      &::before
+        +p
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        width: 35px
+        height: 35px
+        background: url('../img/sprite.svg#right') no-repeat center
+        background-size: 50%
+    .owl-prev
+      &::before
+        transform: translateX(-50%) translateY(-50%) rotate(180deg)
+      &:hover
+        background: #d75d40 !important
+    .owl-next
+      background: #cd5942 !important
+      &:hover
+        background: #c3543f !important
+
+.benefits
+  &-items
+    border: 2px solid #e4e4e4
+  &__item
+    width: 50%
+    padding: 26px 10px 32px 91px
+    position: relative
+    &-header
+      font-size: 17px
+      font-weight: 700
+      line-height: 22px
+      margin-bottom: 7px
+    &:first-child, &:nth-child(2)
+      border-bottom: 2px solid #e4e4e4
+    &-image
+      position: absolute
+      width: 37px
+      height: 37px
+      top: 30px
+      left: 35px
+      fill: $orange
+
+.reviews
+  padding: 79px 0 90px
+  &__header
+    margin-bottom: 5px
+  &__subheader
+    margin-bottom: 52px
+  &-items
+  &__item
+    // width: calc(50% - 5px)
+    background: #f3f2f3 url("../img/sprite.svg#review") no-repeat top 20px right 30px
+    background-size: 105px
+    position: relative
+    padding: 23px 35px 25px 100px
+    &-image
+      position: absolute
+      top: 30px
+      left: 30px
+      width: 50px !important
+      height: 50px !important
+    &-name
+      color: $orange
+      line-height: 27px
+      letter-spacing: 0.38px
+      margin-bottom: 4px
+    &-text
+      letter-spacing: 0.38px
+  .owl-nav
+    display: flex
+    justify-content: center
+    margin-top: 30px
+    .owl-prev, .owl-next
+      width: 35px
+      height: 35px
+      background: #e36243 !important
+      position: relative
+      border-radius: 0
+      transition: background .5s ease
+      &::before
+        +p
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        width: 35px
+        height: 35px
+        background: url('../img/sprite.svg#right') no-repeat center
+        background-size: 50%
+    .owl-prev
+      &::before
+        transform: translateX(-50%) translateY(-50%) rotate(180deg)
+      &:hover
+        background: #d75d40 !important
+    .owl-next
+      background: #cd5942 !important
+      &:hover
+        background: #c3543f !important
+
+.footer
+  &__top
+    background: $orange url('../img/footer-bg.jpg') top center no-repeat
+    background-size: cover
+    padding: 90px 0
+    &-inner
+      align-items: normal
+  &__middle
+    background-color: #333333
+    color: #fff
+    padding: 54px 0 53px
+    a
+      color: #fff
+    &-left
+      width: 50%
+    &-right
+      width: 50%
+      padding-left: 61px
+      display: grid
+      grid-template-columns: repeat(6, 1fr)
+      position: relative
+      &::before
+        +p
+        width: 2px
+        height: 100px
+        background-color: #414141
+        top: -9px
+        left: -1px
+  &__bottom
+    background-color: #252525
+    color: #fff
+    font-size: 13px
+    letter-spacing: 0.33px
+    &-inner
+      height: 50px
+    a
+      color: #fff
+      border-bottom: 1px solid rgba(#fff, .5)
+      &:hover
+        color: $orange
+        border-bottom-color: rgba($orange, .5)
+  &__link
+    border-bottom: 1px solid rgba(#fff, .5)
+    font-size: 13px
+    line-height: 20px
+    letter-spacing: 0.33px
+    &:hover
+      color: $orange
+      border-bottom-color: rgba($orange, .5)
+  &__address, &__whours
+    font-size: 13px
+    line-height: 20px
+    position: relative
+    padding-left: 16px
+    &::before
+      +p
+      width: 10px
+      height: 10px
+  &__address
+    order: 0
+    grid-column: span 4
+    margin-bottom: 21px
+    &::before
+      +p
+      background: url('../img/sprite.svg#address') no-repeat
+      top: 6px
+      left: 0px
+  &__whours
+    order: 2
+    grid-column: span 4
+    &::before
+      +p
+      background: url('../img/sprite.svg#whours') no-repeat
+      top: 5px
+      left: -1px
+  &__phones
+    order: 1
+    grid-column: span 2
+    text-align: right
+  &__email
+    order: 3
+    grid-column: span 2
+    text-align: right
+    position: relative
+    &::before
+      +p
+      width: 10px
+      height: 10px
+      background: url('../img/sprite.svg#email') no-repeat
+      top: 7px
+      right: 125px
+    &-link
+      font-weight: 700
+      letter-spacing: 0.33px
+      font-size: 13px
+      position: relative
+      border-bottom: 1px solid rgba(#fff, .5)
+      &:hover
+        color: $orange
+        border-bottom-color: rgba($orange, .5)
+  &__phone
+    font-weight: 700
+    line-height: 25px
+    &:hover
+      color: $orange
+
+.map
+  width: calc(50% - 5px)
+  height: 446px
+  background: #000
+
+.form
+  width: calc(50% - 5px)
+  background-color: #ffffff
+  padding: 30px 40px 50px
+  &__header
+    color: $orange
+    text-align: center
+    font-size: 25px
+    font-weight: 700
+    line-height: 59px
+    letter-spacing: 0.5px
+    margin-bottom: 6px
+  &__inner
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: repeat(4, 1fr)
+    margin-bottom: 2px
+  &__name
+    grid-column: span 2
+  &__phone
+    grid-column: span 2
+  &__comment
+    grid-column: span 4
+    margin-top: 5px
+  &__label
+    p
+      color: #929292
+      letter-spacing: 0.3px
+      margin-bottom: 5px
+  &__input, &__textarea
+    border: 2px solid #f1f1f1
+    width: 100%
+    +tr
+    &:focus
+      border-color: rgba($orange, .5)
+  &__input
+    height: 40px
+    padding: 0 15px
+  &__textarea
+    resize: none
+    height: 80px
+    padding: 10px 15px
+  &__privacy
+    padding-left: 25px
+    position: relative
+    font-size: 13px
+    letter-spacing: 0.26px
+    margin-bottom: 26px
+    display: block
+    &::before, &::after
+      +p
+      width: 17px
+      height: 17px
+      background-color: #f1f1f1
+      top: 2px
+      left: 0
+      +tr
+    &::after
+      background: url('../img/sprite.svg#check') no-repeat center
+      background-size: 11px
+      opacity: 0
+    &.active
+      &::after
+        opacity: 1
+    a
+      color: #333333
+      border-bottom: 1px solid rgba(#333333, .5)
+      &:hover
+        color: $orange
+        border-bottom-color: rgba($orange, .5)
+  &__button
+    width: 270px
+    margin: auto
+
+.modal
+  .form
+    text-align: left
+    width: 100%
+    padding: 0 10px 20px
+
+.mobile
+  display: none
+
+.top
+  position: fixed
+  right: 50px
+  bottom: 50px
+  text-align: center
+  cursor: pointer
+  transform: translateY(100px)
+  opacity: 0
+  +tr
+  &.active
+    transform: none
+    opacity: 1
+  &__image
+    width: 50px
+    height: 50px
+    fill: #fff
+    border-radius: 50%
+  &__text
+    color: #ffffff
+    font-size: 20px
+    font-weight: 500
+    line-height: 20px
+
+.privacy
+  text-align: left
+  max-width: 100%
+  h2
+    text-align: center
+    margin-bottom: 20px
+  p
+    margin: 15px 0
+  a
+    color: $orange
+    border-bottom: 1px solid rgba($orange, .5)
+  ul
+    padding-left: 30px
+    margin: 15px 0
+    list-style: disc
+
+.tagline
+  padding: 15px 15px 10px
+  font-size: 12px
+  line-height: 18px
+  letter-spacing: 0.3px
+
+.mobile
+  .header__whours
+    width: 100%
+    margin: 0 0 10px
+    padding: 0 15px
+    &::before
+      content: none
+  .header__email
+    display: block
+    padding: 0 15px 15px 30px
+    &::before
+      left: 15px

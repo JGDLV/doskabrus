@@ -1,0 +1,36 @@
+-
+  var benefits = {
+    items: [
+      {
+        image: 'img/sprite.svg#about-01',
+        header: 'Помощь с выбором',
+        text: 'Посоветуем подходящие пиломатериалы'
+      },
+      {
+        image: 'img/sprite.svg#about-02',
+        header: 'Всегда в наличии',
+        text: 'Собственный склад пиломатериалов в ЛО'
+      },
+      {
+        image: 'img/sprite.svg#about-03',
+        header: 'Контроль качества',
+        text: 'На всех этапах производства'
+      },
+      {
+        image: 'img/sprite.svg#about-04',
+        header: 'Опт и розница',
+        text: 'Поставляем как мелкие, так и крупные партии'
+      },
+    ],
+  }
+
+.benefits-items.flex
+  each item in benefits.items
+    .benefits__item
+      .benefits__item-image-part
+        svg.benefits__item-image
+          use(xlink:href=item.image)
+        //- img.benefits__item-image(src=item.image, alt='')
+      .benefits__item-text-part
+        p.benefits__item-header !{item.header}
+        p.benefits__item-text !{item.text}

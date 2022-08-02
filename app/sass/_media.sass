@@ -1,0 +1,422 @@
+@media (min-width: 576px)
+  .container
+    max-width: 540px
+
+@media (min-width: 768px)
+  .container
+    max-width: 720px
+
+@media (min-width: 992px)
+  .container
+    max-width: 960px
+
+@media (min-width: 1200px)
+  .container
+    max-width: 1200px
+
+@media (max-width: 1200px)
+  .header__whours
+    margin-left: auto
+  .logo
+    margin-right: 0
+  .header__email
+    display: none
+  .intro
+    padding: 30px 0
+  .intro__header, h2, .cta__header
+    font-size: 30px
+    line-height: normal
+  .catalog
+    padding: 30px 0
+  .price
+    padding: 30px 0
+  .cta
+    padding: 30px 0
+    &__text-part
+      width: calc(100% - 300px)
+    &__button-part
+      width: 300px
+      max-width: none
+  .scheme
+    padding: 30px 0
+    &-items
+      padding: 0 28px
+    &__item
+      &::after
+        content: none !important
+  .about
+    padding: 30px 0
+    &-items
+      max-width: 930px
+    &__item
+      &-image
+        height: auto
+  .reviews
+    padding: 30px 0
+  .about__left
+    margin-bottom: 20px
+    padding: 0
+  .about__left, .about__right
+    width: 100%
+  .footer__top
+    padding: 30px 0
+  .footer
+    &__middle
+      padding: 30px 0
+      &-inner
+        justify-content: space-between
+      &-left, &-right
+        width: auto
+      &-left
+        padding-right: 30px
+      &-right
+        padding-left: 30px
+  .header
+    &__bottom
+      display: flex !important
+
+@media (max-width: 992px)
+  .intro-items
+    margin-bottom: 14px
+  .intro__item
+    width: 50%
+    margin-bottom: 30px
+  .catalog__item
+    width: 50%
+    &-image
+      width: 100%
+      height: 100%
+  .services__item
+    width: 100%
+  .price-table td
+    padding: 5px 10px !important
+  .about-items
+    max-width: 690px
+  .form__header
+    line-height: 23px
+    margin-bottom: 10px
+  .header__whours
+    display: none
+  .footer__middle
+    &-left
+      padding: 0 0 20px
+    &-right
+      width: 100%
+      padding: 0
+      &::before
+        content: none
+
+@media (max-width: 768px)
+  .intro__header
+    font-size: 24px
+    line-height: normal
+  .intro__header, h2, .cta__header
+    font-size: 20px
+    text-align: center
+  .subheader, .intro__subheader, .cta__text
+    font-size: 15px
+    text-align: center
+    margin-bottom: 20px
+    line-height: normal
+  .cta__header, .cta__text
+    text-align: left
+  .intro__bottom
+    justify-content: center
+    text-align: center
+  .intro__button
+    margin: 0 0 10px
+  .price-table td
+    font-size: 13px !important
+    line-height: 1.6 !important
+  .btn
+    height: 38px
+    font-size: 12px
+    span
+      padding-left: 30px
+      &::before
+        top: 0
+        background-size: 20px
+  .cta__text-part, .cta__button-part
+    padding: 0
+    width: 100%
+  .info-items
+    margin: 0
+  .info__item
+    width: 100%
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 0
+  .about-items
+    max-width: 510px
+  .benefits__item
+    width: 100%
+    border: 2px solid #e4e4e4
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+  .form
+    order: 0
+    width: 100%
+    margin-bottom: 15px
+  .map
+    order: 1
+    width: 100%
+    height: 290px
+    img
+      width: 100%
+      height: 100%
+  .header__button
+    display: none
+  .header__whours
+    display: block
+    order: 4
+    margin-top: 10px
+    width: 198px
+  .header__phones
+    padding: 7px 30px 7px 15px
+    &:hover
+      position: relative
+    &:hover
+      .header__phone:last-child
+        display: block
+        position: absolute
+        top: 90%
+        left: 0
+        z-index: 10
+        background: #929292
+        width: 100%
+        padding: 0 30px 7px 15px
+  .header__phone
+    margin-bottom: 0 !important
+    &:last-child
+      display: none
+  .header__bottom
+    padding: 15px
+    display: flex
+    justify-content: space-between
+    position: relative
+    height: 51px
+    .btn
+      width: 145px
+      height: 27px
+      position: absolute
+      top: 12px
+      right: 15px
+  .menu
+    display: none
+  .menu-toggle
+    display: flex
+    position: absolute
+    left: 15px
+    top: 17px
+  .desktop
+    display: none
+  .mobile
+    display: block
+    &.btn
+      display: flex
+
+@media (max-width: 576px)
+  .intro__header
+    font-size: 24px
+  h2
+    font-size: 16px
+  .cta__header
+    font-size: 20px
+  .intro__subheader
+    font-size: 16px
+  .subheader, .cta__text
+    font-size: 13px
+  .intro-items
+    margin-left: 0
+    margin-right: 0
+  .intro__item
+    width: 100%
+    padding-left: 50px
+    padding-right: 0
+    &-header
+      font-size: 13px
+    &-text
+      font-size: 13px
+      line-height: 18px
+    &-image
+      left: 0
+  .btn
+    &_call, &_cta
+      span
+        padding-left: 30px
+  .intro__bottom-text
+    display: none
+  .catalog-items
+    margin-bottom: 20px
+  .catalog__item-text
+    font-size: 16px
+    line-height: 20px
+    left: 20px
+    bottom: 15px
+  .services__item-header
+    font-size: 16px
+  .services__item-text
+    font-size: 13px
+  .services__item-image
+    top: 20px
+    left: 20px
+  .services__item
+    padding-left: 80px
+    padding-top: 30px
+  .cta__bottom-text
+    display: none
+  .cta__button
+    margin-bottom: 0
+  .scheme-items
+    // margin-bottom: 0
+  .scheme__item
+    min-height: 0
+    font-size: 13px
+    &-text-part
+      min-height: 76px
+  .info__item-header
+    font-size: 16px
+    line-height: 53px
+  .info__item-text
+    font-size: 13px
+    padding: 20px
+  .reviews__item
+    font-size: 13px
+    padding-right: 20px
+  .about__subheader
+    margin-bottom: 0
+  .about__left
+    font-size: 13px
+    line-height: 18px
+    margin-top: 10px
+    p
+      &:last-child
+        display: none
+  .about__right
+    display: none
+  .about__button
+    width: 100%
+  .benefits__item-header
+    font-size: 13px
+  .benefits__item-text
+    font-size: 13px
+    line-height: 18px
+  .benefits__item
+    padding-left: 80px
+    padding-top: 20px
+    &-image
+      top: 20px
+      left: 20px
+  .form__header
+    font-size: 20px
+  .form__name, .form__phone
+    grid-column: span 4
+  .form__comment
+    margin-bottom: 10px
+  .logo__image
+    width: 130px
+  .header__top
+    .container
+      max-width: 330px
+  .header__phones
+    padding: 5px 22px 5px 10px
+    position: relative
+    &::after
+      +p
+        width: 20px
+        height: 20px
+        background: url('../img/sprite.svg#next') no-repeat center
+        background-size: 16px
+        top: 5px
+        right: 3px
+    &:hover
+      .header__phone:last-child
+        display: block
+        position: absolute
+        top: 80%
+        left: 0
+        z-index: 10
+        background: #929292
+        width: 100%
+        padding: 0 10px 5px
+      &::after
+        transform: rotate(90deg)
+        +tr
+  .header__phone
+    font-size: 12px
+    letter-spacing: 0.4px
+  .header__whours
+    width: 145px
+    font-size: 12px
+    padding-left: 12px
+    letter-spacing: 0.3px
+    // text-align: right
+    &::before
+      left: -2px
+  .header__top
+    padding: 15px 0
+  .price-table-wrap
+    margin-bottom: 20px
+  .price-table
+    display: none
+  .price-items
+    display: block
+  .about__button
+    display: flex
+  .footer__middle-right
+    & > *
+      grid-column: span 6
+  .footer
+    &__address
+      order: 0
+      margin-bottom: 10px
+      br
+        display: none
+    &__whours
+      margin-bottom: 10px
+      order: 1
+    &__phones
+      order: 2
+      margin-bottom: 10px
+      text-align: left
+    &__phone
+      font-size: 20px
+      line-height: 30px
+    &__email
+      order: 3
+      text-align: left
+      padding-left: 16px
+      &::before
+        left: 0
+        right: auto
+  .map
+    margin-bottom: 30px
+  .top
+    position: static
+  .header__bottom
+    .container
+      padding: 0
+    .menu
+      position: absolute
+      top: 100%
+      background: #fff
+      left: 0
+      right: 0
+      z-index: 10
+      &-items
+        display: block
+      &__item
+        text-align: left
+        &::after
+          content: none
+        // &:last-child
+        //   a
+        //     border-bottom: 0
+      &__link
+        color: #333333
+        font-size: 12px
+        letter-spacing: 0.3px
+        line-height: 40px
+        border-bottom: 1px solid #e1e1e1
+        padding: 0 15px

@@ -1,0 +1,60 @@
+-
+  var catalog = {
+    header: 'Не важно, насколько сложная задача стоит перед вами ',
+    subheader: 'В каталоге вы найдете пиломатериалы для ее решения',
+    items: [
+      {
+        image: 'img/catalog-01.jpg',
+        href: '#',
+        text: 'Доска'
+      },
+      {
+        image: 'img/catalog-02.jpg',
+        href: '#',
+        text: 'Брус'
+      },
+      {
+        image: 'img/catalog-03.jpg',
+        href: '#',
+        text: 'Брусок'
+      },
+      {
+        image: 'img/catalog-04.jpg',
+        href: '#',
+        text: 'Рейка'
+      },
+      {
+        image: 'img/catalog-05.jpg',
+        href: '#',
+        text: 'Шпунт'
+      },
+      {
+        image: 'img/catalog-06.jpg',
+        href: '#',
+        text: 'Вагонка'
+      },
+      {
+        image: 'img/catalog-07.jpg',
+        href: '#',
+        text: 'Блок-хаус'
+      },
+      {
+        image: 'img/catalog-08.jpg',
+        href: '#',
+        text: 'Имитация бруса'
+      },
+    ],
+    button: { href: '#', text: '' }
+  }
+
+.catalog#catalog
+  .container
+    h2.catalog__header !{catalog.header}
+    p.catalog__subheader.subheader !{catalog.subheader}
+    .catalog-items.flex
+      each item in catalog.items
+        a.catalog__item(href=item.href)
+          span.catalog__item-image-part
+            img.catalog__item-image(src=item.image, alt='')
+          span.catalog__item-text !{item.text}
+    include services.pug

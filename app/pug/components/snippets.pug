@@ -1,0 +1,121 @@
+-
+  var section = {
+    header: '',
+    subheader: '',
+    text: '',
+    texts: [
+      'text',
+    ],
+    items: [
+      {
+        image: '',
+        header: '',
+        text: ''
+      },
+    ],
+    button: { href: '#', text: '' }
+  }
+
+.section#section
+  .container
+    h1.section__header !{section.header}
+    p.section__subheader.subheader !{section.subheader}
+    p.section__text !{section.text}
+
+.section#section
+  .container
+    .section__inner
+      .section__text-part
+        h2.section__header !{section.header}
+        p.section__subheader.subheader !{section.subheader}
+        p.section__text !{section.text}
+      .section__image-part
+        img.section__image(src=section.image alt='')
+
+.section#section
+  .container
+    h2.section__header !{section.header}
+    p.section__subheader.subheader !{section.subheader}
+    .section__inner
+      .section__left
+      .section__right
+
+.section-items
+  each item in section.items
+    .section__item
+      .section__item-image-part
+        img.section__item-image(src=item.image, alt='')
+      .section__item-text-part
+        p.section__item-header !{item.header}
+        p.section__item-text !{item.text}
+
+.section-tabs.tabs
+  .section-tabs-controls.tabs-controls
+    .section-tabs__control.tabs__control Tab 01
+  .section-tabs__content.tabs__content Tab 01
+
+.section-dropdown.dropdown
+  input(type='hidden' name='dropdown' value='')
+  .section-dropdown__current.dropdown__current Choose...
+  ul.section-dropdown-items.dropdown-items
+    li.section-dropdown__item.dropdown__item Text
+
+.section-items.accordion
+  each item in section.items
+    .section__item
+      .section__item-head !{item.question}
+      .section__item-body !{item.answer}
+
+.cta#cta
+  .container
+    .cta__inner
+      .cta__text-part
+        p.cta__header !{cta.header}
+        p.cta__subheader !{cta.subheader}
+        p.cta__text !{cta.text}
+      a.cta__button(href=cta.buttonHref)
+        span !{cta.buttonText}
+
+.header
+  .header__top
+    .container
+      .header__top-inner
+        .logo
+          a.logo__link(href='/')
+            img.logo__image(src='img/logo.png', alt='')
+        .header__contacts
+        a.callback#callback(href='#callback')
+          span Обратный звонок
+  .header__bottom
+    .container
+      .header__bottom-inner
+
+.menu.mobile-menu
+  ul.menu-items
+    each item in menu
+      li.menu__item
+        a.menu__link(href=item.href) !{item.text}
+
+.footer
+  .footer__top
+    .container
+      .footer__top-inner
+        .logo
+          a.logo__link(href='/')
+            img.logo__image(src='img/logo.png', alt='')
+        .footer__contacts
+        a.callback#callback(href='#callback')
+          span Обратный звонок
+  .footer__bottom
+    .container
+      .footer__bot-m__inner
+        p © 2018
+        p Создание сайта: #[a(href='https://1ps.ru/') 1PS.RU]
+
+form.modal-form.mfp-hide#callback
+  p.modal-form__header !{modal.header}
+  p.modal-form__subheader !{modal.subheader}
+  input.modal-form__name(placeholder='Ваше имя')
+  input.modal-form__phone(placeholder='+7 (___) ___-__-__' name='phone' required)
+  button.modal-form__submit(type='submit')
+    span !{modal.buttonText}

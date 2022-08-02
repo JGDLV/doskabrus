@@ -1,0 +1,41 @@
+-
+  var scheme = {
+    header: 'Получите партию пиломатериалов от производителя точно в срок',
+    subheader: 'Никаких задержек и переносов дат',
+    items: [
+      {
+        image: 'img/sprite.svg#scheme-01',
+        text: '<a href="#callback">Оставьте заявку</a>, если хотите купить пиломатериалы – свяжемся с вами в течение рабочего дня '
+      },
+      {
+        image: 'img/sprite.svg#scheme-02',
+        text: 'Обсудите задачу с менеджером, чтобы рассчитать необходимый объем продукции'
+      },
+      {
+        image: 'img/sprite.svg#scheme-03',
+        text: 'Внесите предоплату 50%. Изготовление займет до 1 недели – в зависимости от количества пиломатериалов '
+      },
+      {
+        image: 'img/sprite.svg#scheme-04',
+        text: 'Укажите адрес доставки – предложим оптимальный способ транспортировки, либо заберите заказ самостоятельно '
+      },
+      {
+        image: 'img/sprite.svg#scheme-05',
+        text: 'Внесите оставшуюся сумму за пиломатериалы удобным способом и получите документы '
+      },
+    ],
+  }
+
+.scheme#scheme
+  .container
+    h2.scheme__header !{scheme.header}
+    p.scheme__subheader.subheader !{scheme.subheader}
+    .scheme-items.owl-carousel
+      each item in scheme.items
+        .scheme__item
+          .scheme__item-image-part
+            svg.scheme__item-image
+              use(xlink:href=item.image)
+            //- img.scheme__item-image(src=item.image, alt='')
+          .scheme__item-text-part !{item.text}
+    include info.pug

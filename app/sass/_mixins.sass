@@ -1,0 +1,44 @@
+@mixin body
+  @content
+  min-height: 100%
+  position: relative
+
+@mixin footer
+  @content
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+
+@mixin flex
+  @content
+  display: flex
+  flex-wrap: wrap
+
+@mixin dark ($color)
+  @content
+  background-color: darken($color, 5%)
+
+@mixin white
+  @content
+  color: #FFF
+
+@mixin p
+  @content
+  position: absolute
+  content: ''
+  display: block
+
+@mixin tr
+  @content
+  transition: all .5s ease
+
+@mixin center
+  @content
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+@mixin bbt
+  @content
+  border-color: transparent

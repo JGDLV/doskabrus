@@ -1,0 +1,19 @@
+-
+  var cta = {
+    header: 'Если не знаете, какое количество пиломатериала купить для вашей задачи – просто расскажите о ней нашему специалисту ',
+    subheader: 'Он поможет рассчитать объем, стоимость и посоветует вид изделий ',
+    text: 'Он поможет рассчитать объем, стоимость и посоветует вид изделий',
+    button: { href: '#callback', text: 'оставить заявку' },
+    bottom: 'Заранее сообщим, сколько будет стоить партия пиломатериала и доставка на объект',
+  }
+
+.cta#cta
+  .container
+    .cta__inner.flex
+      .cta__text-part
+        p.cta__header !{cta.header}
+        p.cta__text !{cta.text}
+      .cta__button-part
+        a.cta__button.btn.btn_cta(href=cta.button.href)
+          span !{cta.button.text}
+        p.cta__bottom-text !{cta.bottom}
